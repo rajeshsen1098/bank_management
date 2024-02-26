@@ -2,12 +2,16 @@ package  bank_management;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.*;
-
 import javax.swing.*;
+
+
 public class Login extends JFrame implements ActionListener{
+    
     JButton login,clear,signup;
     JTextField cn;
     JPasswordField pt;
+
+
     Login(){
         // super();
         setTitle("ATM");
