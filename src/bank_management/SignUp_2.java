@@ -1,4 +1,4 @@
-package bank_management;
+rthpackage bank_management;
 
 import java.awt.*;
 import java.awt.event.*;
