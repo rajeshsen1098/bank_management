@@ -2,6 +2,7 @@ package bank_management;
 
 import java.awt.*;
 import javax.swing.*;
+import java.sql.Statement;
 import java.util.*;
 import com.toedter.calendar.JDateChooser;
 import java.awt.event.*;
@@ -13,15 +14,15 @@ public class SignUp_1 extends JFrame implements ActionListener{
     JRadioButton male,female,marride,unmarride;
     JButton next;
     JDateChooser dateChooser;
-//    JLabel formno,personalDetail,name,fanme,dob,gender,email,marital,address,city,pinCode,state;
-
+    JLabel formno,personalDetail,name,fanme,dob,gender,email,marital,address,city,pinCode,state;
+//    JLabel formno
 
     SignUp_1(){
              
         setLayout(null);
         Random ran=new Random();
         int random=Math.abs(ran.nextInt(9999));
-         JLabel formno =new JLabel("Application From No."+random);
+        formno =new JLabel("Application From No."+random);
         formno.setFont(new Font("Raleway",Font.BOLD,38));
         formno.setBounds(120,20,600,40);
         add(formno);
@@ -204,6 +205,8 @@ public class SignUp_1 extends JFrame implements ActionListener{
                 conn c=new conn();
                 String quary="insert into signup values('"+formno+"','"+name+"','"+fname+"','"+dob+"','"+gender+"','"+email+"','"+marital+"','"+adress+"','"+city+"','"+state+"','"+pin+"')";
                 c.s.executeUpdate(quary);
+                setVisible(false);
+                new SignUp_2(formno).setVisible(true);
             }
 
         }catch(Exception e){
@@ -215,6 +218,7 @@ public class SignUp_1 extends JFrame implements ActionListener{
     public static void main(String[] args) {
 
         new SignUp_1();
+
     }
     
 }
