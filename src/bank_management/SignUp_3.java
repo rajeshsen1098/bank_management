@@ -192,12 +192,15 @@ public class SignUp_3 extends JFrame implements ActionListener{
                 if(accountType.equals("")){
                     JOptionPane.showMessageDialog(null,"Account Type Required");
                 }else{
-                    conn connection=new conn();
+                    Conn connection=new Conn();
                     String quary1="Insert into signup_3 values('"+formno+"','"+accountType+"','"+cardNumber+"','"+pinNumber+"','"+faculty+"')";
                     connection.s.executeUpdate(quary1);
                     String quary2="Insert into login values('"+formno+"','"+cardNumber+"','"+pinNumber+"')";
                     connection.s.executeUpdate(quary2);
                     JOptionPane.showMessageDialog(null,"Card Number: "+cardNumber+"\n Pin Number: "+pinNumber);
+
+                    setVisible(false);
+                    new Deposit(pinNumber).setVisible(true);
 
                 }
 
@@ -206,6 +209,8 @@ public class SignUp_3 extends JFrame implements ActionListener{
             }
 
         }else if (ae.getSource() == cancel){
+            setVisible(false);
+            new  Login().setVisible(true);
 
         }
     }

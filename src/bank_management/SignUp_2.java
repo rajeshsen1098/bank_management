@@ -192,7 +192,7 @@ public class SignUp_2 extends JFrame implements ActionListener {
 
         try{
 
-                conn p=new conn();
+                Conn p=new Conn();
                 String quary="insert into signup_2 values('"+formno+"','"+sreligion+"','"+saadhar+"','"+span+"','"+scatagory+"','"+sincome+"','"+seducation+"','"+soccupation+"','"+seniCiti+"','"+existingAccount+"')";
                 p.s.executeUpdate(quary);
                 setVisible(false);

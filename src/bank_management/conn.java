@@ -3,10 +3,10 @@ import  java.sql.*;
 //import  com.mysql.*;
 
 
-public class conn {
+public class Conn {
     Connection c;
     Statement s;
-    public conn(){
+    public Conn(){
         try{
 //            Class.forName(com.mysql.cj.jdbc.Driver);
             c= DriverManager.getConnection("jdbc:mysql:///bankmanagementsystem","root","Rajesh@1098");

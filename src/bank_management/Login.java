@@ -86,7 +86,7 @@ public class Login extends JFrame implements ActionListener {
 
         } else if (i.getSource() == login) {
 
-            conn co=new conn();
+            Conn co=new Conn();
             String cardNumber =cn.getText();
             String pinNumber=pt.getText();
             String quary ="select * from login where cardNumber = '"+cardNumber+"'and pin_number = '"+pinNumber+"';";

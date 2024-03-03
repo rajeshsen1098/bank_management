@@ -1,5 +1,6 @@
 package bank_management;
 
+
 import java.awt.*;
 import javax.swing.*;
 import java.sql.Statement;
@@ -16,12 +17,13 @@ public class SignUp_1 extends JFrame implements ActionListener{
     JDateChooser dateChooser;
     JLabel formno,personalDetail,name,fanme,dob,gender,email,marital,address,city,pinCode,state;
 //    JLabel formno
+//    int random;
 
     SignUp_1(){
              
         setLayout(null);
         Random ran=new Random();
-        int random=Math.abs(ran.nextInt(9999));
+        random=Math.abs(ran.nextInt(9999));
         formno =new JLabel("Application From No."+random);
         formno.setFont(new Font("Raleway",Font.BOLD,38));
         formno.setBounds(120,20,600,40);
@@ -176,7 +178,7 @@ public class SignUp_1 extends JFrame implements ActionListener{
         getContentPane().setBackground(Color.white);
     }
     public void actionPerformed(ActionEvent ae){
-        String formno = ""+random;
+        String form = ""+random;
         String name= nameTextField.getText();
         String fname=fnameTextField.getText();
         String dob=((JTextField)dateChooser.getDateEditor().getUiComponent()).getText();
@@ -202,11 +204,11 @@ public class SignUp_1 extends JFrame implements ActionListener{
             if(name.equals("")){
                 JOptionPane.showMessageDialog(null,"Name Required");
             }else {
-                conn c=new conn();
-                String quary="insert into signup values('"+formno+"','"+name+"','"+fname+"','"+dob+"','"+gender+"','"+email+"','"+marital+"','"+adress+"','"+city+"','"+state+"','"+pin+"')";
+                Conn c=new Conn();
+                String quary="insert into signup values('"+form+"','"+name+"','"+fname+"','"+dob+"','"+gender+"','"+email+"','"+marital+"','"+adress+"','"+city+"','"+state+"','"+pin+"')";
                 c.s.executeUpdate(quary);
                 setVisible(false);
-                new SignUp_2(formno).setVisible(true);
+                new SignUp_2(form).setVisible(true);
             }
 
         }catch(Exception e){
