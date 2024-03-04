@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
 import java.util.Date;
 
 public class Withdrawl extends JFrame implements ActionListener {
@@ -71,7 +70,7 @@ public class Withdrawl extends JFrame implements ActionListener {
                     con.s.executeUpdate(query);
                     JOptionPane.showMessageDialog(null,"Rs "+cashDeposit+" withdrawl successfully.");
                     setVisible(false);
-                    new Transactions(pinNumber).setVisible(true);
+                    new FastCash(pinNumber).setVisible(true);
                 } catch (Exception e) {
                     System.out.println(e);
                 }
@@ -79,7 +78,7 @@ public class Withdrawl extends JFrame implements ActionListener {
 
         }else if(ae.getSource()==back){
             setVisible(false);
-            new Transactions(pinNumber).setVisible(true);
+            new FastCash(pinNumber).setVisible(true);
 
         }
 

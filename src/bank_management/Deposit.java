@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
 import java.util.Date;
 
 public class Deposit extends JFrame implements ActionListener {
@@ -62,16 +61,16 @@ public class Deposit extends JFrame implements ActionListener {
             String cashDeposit=amount.getText();
             Date date=new Date();
 
-            if(cashDeposit.equals("")){
+            if(cashDeposit.isEmpty()){
                 JOptionPane.showMessageDialog(null,"Please enter the amount ....");
             }else {
                 Conn con=new Conn();
-                String quary="insert into bank values('"+pinNumber+"','"+date+"','deposit','"+cashDeposit+"');";
+                String query="insert into bank values('"+pinNumber+"','"+date+"','deposit','"+cashDeposit+"');";
                 try {
-                    con.s.executeUpdate(quary);
+                    con.s.executeUpdate(query);
                     JOptionPane.showMessageDialog(null,"Rs "+cashDeposit+" deposit successfully.");
                     setVisible(false);
-                    new Transactions(pinNumber).setVisible(true);
+                    new FastCash(pinNumber).setVisible(true);
                 } catch (Exception e) {
                     System.out.println(e);
                 }
@@ -79,7 +78,7 @@ public class Deposit extends JFrame implements ActionListener {
 
         }else if(ae.getSource()==back){
             setVisible(false);
-            new Transactions(pinNumber).setVisible(true);
+            new FastCash(pinNumber).setVisible(true);
 
         }
 

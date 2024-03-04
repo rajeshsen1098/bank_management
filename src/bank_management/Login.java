@@ -27,13 +27,13 @@ public class Login extends JFrame implements ActionListener {
         JLabel text = new JLabel("WELCOME TO ATM");                                     // this is a new label for text
         add(text);
         text.setBounds(200, 10, 1000, 40);
-        text.setFont(new Font("Osward", Font.BOLD, 38));
+        text.setFont(new Font("Os ward", Font.BOLD, 38));
         getContentPane().setBackground(Color.white);
 
         JLabel cardno = new JLabel("card no:");
         add(cardno);
         cardno.setBounds(150, 150, 150, 40);
-        cardno.setFont(new Font("Raleway", Font.BOLD, 28));
+        cardno.setFont(new Font("Rale way", Font.BOLD, 28));
         getContentPane().setBackground(Color.white);
 
         cn = new JTextField();                                                               // cn is a JTextField which is declear in globally for global uses
