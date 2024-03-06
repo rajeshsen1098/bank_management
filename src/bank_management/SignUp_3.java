@@ -172,7 +172,7 @@ public class SignUp_3 extends JFrame implements ActionListener{
             }
             Random random=new Random();
             String cardNumber= ""+Math.abs((random.nextLong()% 900000000L+5040936000000000L));
-            String pinNumber= ""+Math.abs((random.nextLong()% 9000L+1000L));
+            String pinNumber= ""+Math.abs((random.nextLong()% 90000L+1000L));
             String faculty="";
             if(c1.isSelected()){
                 faculty=faculty+" ATM Card";

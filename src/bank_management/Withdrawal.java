@@ -6,12 +6,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
 
-public class Withdrawl extends JFrame implements ActionListener {
+public class Withdrawal extends JFrame implements ActionListener {
     JTextField amount;
     JButton withdrawl,back;
     String pinNumber;
 
-    Withdrawl(String pinNumber){
+    Withdrawal(String pinNumber){
         this.pinNumber=pinNumber;
 
         setLayout(null);
@@ -35,7 +35,7 @@ public class Withdrawl extends JFrame implements ActionListener {
         amount.addActionListener(this);
         image.add(amount);
 
-        withdrawl=new JButton("Withdrawl");
+        withdrawl=new JButton("Withdrawal");
         withdrawl.setBounds(390,490,120,20);
         withdrawl.setFont(new Font("rale way",Font.ITALIC,15));
         withdrawl.addActionListener(this);
@@ -65,12 +65,12 @@ public class Withdrawl extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(null,"Please enter the amount ....");
             }else {
                 Conn con=new Conn();
-                String query="insert into bank values('"+pinNumber+"','"+date+"','withdrawl','"+cashDeposit+"');";
+                String query="insert into bank values('"+pinNumber+"','"+date+"','withdrawal','"+cashDeposit+"');";
                 try {
                     con.s.executeUpdate(query);
-                    JOptionPane.showMessageDialog(null,"Rs "+cashDeposit+" withdrawl successfully.");
+                    JOptionPane.showMessageDialog(null,"Rs "+cashDeposit+" withdrawal successfully.");
                     setVisible(false);
-                    new FastCash(pinNumber).setVisible(true);
+                    new Transactions(pinNumber).setVisible(true);
                 } catch (Exception e) {
                     System.out.println(e);
                 }
@@ -78,7 +78,7 @@ public class Withdrawl extends JFrame implements ActionListener {
 
         }else if(ae.getSource()==back){
             setVisible(false);
-            new FastCash(pinNumber).setVisible(true);
+            new Transactions(pinNumber).setVisible(true);
 
         }
 
@@ -86,7 +86,7 @@ public class Withdrawl extends JFrame implements ActionListener {
 
 
     public static void main(String[] args) {
-        new Withdrawl("");
+        new Withdrawal("");
 //        Date date=new Date();
 //        System.out.println(System.c);
 

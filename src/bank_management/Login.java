@@ -89,10 +89,10 @@ public class Login extends JFrame implements ActionListener {
             Conn co=new Conn();
             String cardNumber =cn.getText();
             String pinNumber=pt.getText();
-            String quary ="select * from login where cardNumber = '"+cardNumber+"'and pin_number = '"+pinNumber+"';";
+            String query ="select * from login where cardNumber = '"+cardNumber+"'and pin_number = '"+pinNumber+"';";
             try{
 
-                ResultSet rs=co.s.executeQuery(quary);
+                ResultSet rs=co.s.executeQuery(query);
                 if(rs.next()){
                     setVisible(false);
                     new Transactions(pinNumber).setVisible(true);
@@ -115,3 +115,4 @@ public class Login extends JFrame implements ActionListener {
         new Login();
     }
 }
+//bug in sign up 3 in service provider,withdrawal page added balance is not resolved

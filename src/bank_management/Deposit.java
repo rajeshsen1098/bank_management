@@ -61,7 +61,7 @@ public class Deposit extends JFrame implements ActionListener {
             String cashDeposit=amount.getText();
             Date date=new Date();
 
-            if(cashDeposit.isEmpty()){
+            if(cashDeposit.equals("")){
                 JOptionPane.showMessageDialog(null,"Please enter the amount ....");
             }else {
                 Conn con=new Conn();
@@ -70,7 +70,7 @@ public class Deposit extends JFrame implements ActionListener {
                     con.s.executeUpdate(query);
                     JOptionPane.showMessageDialog(null,"Rs "+cashDeposit+" deposit successfully.");
                     setVisible(false);
-                    new FastCash(pinNumber).setVisible(true);
+                    new Transactions(pinNumber).setVisible(true);
                 } catch (Exception e) {
                     System.out.println(e);
                 }
@@ -78,7 +78,7 @@ public class Deposit extends JFrame implements ActionListener {
 
         }else if(ae.getSource()==back){
             setVisible(false);
-            new FastCash(pinNumber).setVisible(true);
+            new Transactions(pinNumber).setVisible(true);
 
         }
 
@@ -87,8 +87,5 @@ public class Deposit extends JFrame implements ActionListener {
 
     public static void main(String[] args) {
         new Deposit("");
-//        Date date=new Date();
-//        System.out.println(System.c);
-
     }
 }
