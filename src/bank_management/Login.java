@@ -115,4 +115,5 @@ public class Login extends JFrame implements ActionListener {
         new Login();
     }
 }
-//bug in sign up 3 in service provider,withdrawal page added balance is not resolved
+//bug in sign up 3 in service provider and here by declared,withdrawal page added balance is not resolved
+//

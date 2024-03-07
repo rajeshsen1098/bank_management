@@ -96,12 +96,16 @@ public class Transactions extends JFrame implements ActionListener {
             new BalanceEnquiry(pinNumber).setVisible(true);
 
 
+        } else if (ae.getSource()==miniStatement) {
+//            setVisible(false);
+            new MiniStatement(pinNumber).setVisible(true);
+
         }
 
     }
 
     public static void main(String[] args) {
-        new FastCash("");
+        new Transactions("");
 
     }
 }
